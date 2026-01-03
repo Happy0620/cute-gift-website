@@ -5,7 +5,7 @@ import { GIFT_DATA } from './mockData';
 export const PhotoGallery: React.FC = () => {
   return (
     <section className="py-20 px-6 bg-purple-50 overflow-hidden">
-      <div className="max-w-md mx-auto space-y-12">
+      <div className="max-w-[50px] mx-auto space-y-16">
         {GIFT_DATA.photos.map((photo, index) => (
           <motion.div
             key={photo.id}

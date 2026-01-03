@@ -1,65 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Sparkles, Music, Share2 } from 'lucide-react';
-
-// Mock Data
-const GIFT_DATA = {
-  hero: {
-    title: "A Little Something Just for me Deepa 💚",
-    subtitle: "Made with love, just for me wife🤭",
-  },
-  message: {
-    text: "I made this little space just to remind you how special you are to me🥺💚",
-  },
-  photos: [
-    {
-      id: 1,
-      url: "https://images.unsplash.com/photo-1745192902605-bacc67000f57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTAxMTZ8MHwxfHNlYXJjaHwzfHxjdXRlJTIwY291cGxlJTIwcG9sYXJvaWQlMjBhZXN0aGV0aWN8ZW58MHx8fHwxNzY3NDMxODgwfDA&ixlib=rb-4.1.0&q=80&w=400",
-      caption: "Us being silly 🤪",
-      rotation: -3
-    },
-    {
-      id: 2,
-      url: "https://images.unsplash.com/photo-1728566842903-59fbc50b951b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTAxMTZ8MHwxfHNlYXJjaHwxfHxjdXRlJTIwcGFzdGVsJTIwYWVzdGhldGljJTIwaGVhcnRzJTIwZmxvd2Vyc3xlbnwwfHx8fDE3Njc0MzE4ODF8MA&ixlib=rb-4.1.0&q=80&w=400",
-      caption: "Beautiful moments ✨🤧",
-      rotation: 2
-    },
-    {
-      id: 3,
-      url: "https://images.unsplash.com/photo-1603712152246-d6fa4dad5d2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NTAxMTZ8MHwxfHNlYXJjaHwxfHxjdXRlJTIwY291cGxlJTIwcG9sYXJvaWQlMjBhZXN0aGV0aWN8ZW58MHx8fHwxNzY3NDMxODgwfDA&ixlib=rb-4.1.0&q=80&w=400",
-      caption: "Me favorite view 😻",
-      rotation: -2
-    }
-  ],
-  music: {
-    title: "A Little something for you ears🎁",
-    helperText: "Press play… this song is for you 🎶💚",
-    spotifyUrl: "https://open.spotify.com/embed/track/0aVd7QiY8BstysHb62c5Fi?utm_source=generator",
-    note: "This song reminds me of you 😭"
-  },
-final: {
-  text: `Though miles keep me from holding you close,
-My heart aches more than words can show.
-I wish I could be there, wipe your tears away,
-Hold your hand, and make the pain sway.
-
-Every moment apart feels heavy,
-And I ache to comfort you, to steady
-Your trembling spirit, your gentle smile,
-I'm praying for you, every mile.
-
-May each breath bring strength anew,
-And health and healing wrap around you.
-Until I can be by your side once more,
-Know my love is with you, as I adore.`
-}
-};
+import { GIFT_DATA } from './components/gift/mockData';
 
 // Hero Component
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center text-center p-6 relative overflow-hidden bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
-      {/* Floating Hearts Background */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <motion.div
@@ -104,11 +51,11 @@ const Hero = () => {
           </motion.div>
         </div>
         
-        <h1 className="text-4xl md:text-5xl font-bold text-pink-600 mb-4 leading-tight" style={{ fontFamily: 'Fredoka, sans-serif' }}>
+        <h1 className="text-4xl md:text-5xl font-bold text-pink-600 mb-4 leading-tight font-display">
           {GIFT_DATA.hero.title}
         </h1>
         
-        <p className="text-xl text-purple-500 font-medium" style={{ fontFamily: 'Nunito, sans-serif' }}>
+        <p className="text-xl text-purple-500 font-medium">
           {GIFT_DATA.hero.subtitle}
         </p>
 
@@ -128,8 +75,8 @@ const Hero = () => {
 };
 
 // MessageNote Component
-const MessageNote = () => {
-  const [showHearts, setShowHearts] = React.useState(false);
+const MessageNote: React.FC = () => {
+  const [showHearts, setShowHearts] = React.useState<boolean>(false);
 
   return (
     <section className="py-20 px-6 bg-gradient-to-b from-blue-50 to-pink-50 flex justify-center">
@@ -143,7 +90,6 @@ const MessageNote = () => {
         onHoverEnd={() => setShowHearts(false)}
         className="bg-white max-w-md w-full p-10 rounded-3xl shadow-xl hover:shadow-2xl hover:shadow-pink-300/50 relative transform rotate-1 transition-all duration-300 cursor-pointer"
       >
-        {/* Decorative hearts */}
         <div className="absolute -top-4 -left-4 text-pink-400 transform -rotate-12">
           <Heart size={40} fill="currentColor" />
         </div>
@@ -151,7 +97,6 @@ const MessageNote = () => {
           <Heart size={30} fill="currentColor" />
         </div>
 
-        {/* Hover hearts */}
         {showHearts && (
           <>
             <motion.div
@@ -174,12 +119,11 @@ const MessageNote = () => {
         )}
 
         <div className="space-y-4 text-center">
-          <p className="text-2xl text-gray-700 leading-relaxed" style={{ fontFamily: 'Indie Flower, cursive' }}>
+          <p className="text-2xl text-gray-700 leading-relaxed font-handwriting">
             {GIFT_DATA.message.text}
           </p>
           <div className="flex justify-center gap-2 mt-4">
             <span className="text-2xl">💌</span>
-            <span className="text-2xl">💚</span>
             <span className="text-2xl">✨</span>
           </div>
         </div>
@@ -189,8 +133,8 @@ const MessageNote = () => {
 };
 
 // PhotoGallery Component
-const PhotoGallery = () => {
-  const [hoveredId, setHoveredId] = React.useState(null);
+const PhotoGallery: React.FC = () => {
+  const [hoveredId, setHoveredId] = React.useState<number | null>(null);
 
   return (
     <section className="py-20 px-6 bg-gradient-to-b from-pink-50 to-purple-50 overflow-hidden">
@@ -214,7 +158,6 @@ const PhotoGallery = () => {
               }}
               onHoverStart={() => setHoveredId(photo.id)}
               onHoverEnd={() => setHoveredId(null)}
-              // const [hoveredId, setHoveredId] = React.useState<number | null>(null);
             >
               <div className="aspect-square bg-gray-100 overflow-hidden rounded-lg mb-4 relative">
                 <img 
@@ -224,7 +167,6 @@ const PhotoGallery = () => {
                   loading="lazy"
                 />
                 
-                {/* Share icon on hover */}
                 {hoveredId === photo.id && (
                   <motion.div
                     initial={{ opacity: 0, scale: 0 }}
@@ -235,7 +177,7 @@ const PhotoGallery = () => {
                   </motion.div>
                 )}
               </div>
-              <p className="text-center text-xl text-gray-700 absolute bottom-4 left-0 right-0" style={{ fontFamily: 'Indie Flower, cursive' }}>
+              <p className="text-center text-xl text-gray-700 absolute bottom-4 left-0 right-0 font-handwriting">
                 {photo.caption}
               </p>
             </motion.div>
@@ -247,8 +189,8 @@ const PhotoGallery = () => {
 };
 
 // SurpriseMusicCard Component
-const SurpriseMusicCard = () => {
-  const [showSparkles, setShowSparkles] = React.useState(false);
+const SurpriseMusicCard: React.FC = () => {
+  const [showSparkles, setShowSparkles] = React.useState<boolean>(false);
 
   return (
     <section className="py-20 px-6 bg-gradient-to-b from-purple-50 to-blue-50 flex justify-center">
@@ -262,7 +204,6 @@ const SurpriseMusicCard = () => {
         onHoverEnd={() => setShowSparkles(false)}
         className="bg-white max-w-md w-full rounded-3xl shadow-xl hover:shadow-2xl hover:shadow-blue-300/50 overflow-hidden transition-all duration-300 cursor-pointer relative"
       >
-        {/* Sparkles on hover */}
         {showSparkles && (
           <>
             <motion.div
@@ -288,10 +229,10 @@ const SurpriseMusicCard = () => {
           <div className="inline-block p-4 bg-white rounded-full shadow-lg mb-6">
             <Music className="text-blue-500 w-10 h-10" />
           </div>
-          <h2 className="text-3xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Fredoka, sans-serif' }}>
+          <h2 className="text-3xl font-bold text-gray-800 mb-3 font-display">
             {GIFT_DATA.music.title}
           </h2>
-          <p className="text-gray-700 mb-6 text-lg" style={{ fontFamily: 'Nunito, sans-serif' }}>
+          <p className="text-gray-700 mb-6 text-lg">
             {GIFT_DATA.music.helperText}
           </p>
           
@@ -309,7 +250,7 @@ const SurpriseMusicCard = () => {
             />
           </div>
           
-          <p className="mt-6 text-sm text-gray-600 italic" style={{ fontFamily: 'Indie Flower, cursive' }}>
+          <p className="mt-6 text-sm text-gray-600 italic font-handwriting">
             {GIFT_DATA.music.note}
           </p>
         </div>
@@ -319,10 +260,9 @@ const SurpriseMusicCard = () => {
 };
 
 // FinalMessage Component
-const FinalMessage = () => {
+const FinalMessage: React.FC = () => {
   return (
     <section className="min-h-[70vh] flex flex-col items-center justify-center text-center p-6 bg-gradient-to-t from-pink-100 via-purple-50 to-blue-50 relative overflow-hidden">
-      {/* Background Hearts */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(15)].map((_, i) => (
           <motion.div
@@ -357,9 +297,9 @@ const FinalMessage = () => {
         whileHover={{ scale: 1.05 }}
         className="z-10 max-w-lg bg-white/80 backdrop-blur-sm p-12 rounded-3xl shadow-2xl hover:shadow-pink-300/50 transition-all duration-300"
       >
-        <p className="text-2xl md:text-3xl text-pink-600 leading-relaxed mb-8 whitespace-pre-line" style={{ fontFamily: 'Indie Flower, cursive' }}>
-  {GIFT_DATA.final.text}
-</p>
+        <p className="text-2xl md:text-3xl text-pink-600 leading-relaxed mb-8 whitespace-pre-line font-handwriting">
+          {GIFT_DATA.final.text}
+        </p>
         
         <motion.div
           animate={{ scale: [1, 1.2, 1] }}
@@ -374,9 +314,9 @@ const FinalMessage = () => {
 };
 
 // Main App
-export default function App() {
+function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-800" style={{ fontFamily: 'Nunito, sans-serif' }}>
+    <div className="min-h-screen bg-white text-gray-800 selection:bg-pink-200 selection:text-pink-900">
       <Hero />
       <MessageNote />
       <PhotoGallery />
@@ -389,3 +329,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;

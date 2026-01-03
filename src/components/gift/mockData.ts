@@ -15,16 +15,53 @@ export const GIFT_DATA = {
     },
     {
       id: 2,
-      url: "/hello.jpeg?t=123457",
+      url: "/hello1.jpeg?t=123457",
       caption: "Beautiful moments ✨",
       rotation: 2
     },
     {
       id: 3,
-      url: "/hello.jpeg?t=123458",
+      url: "/hello2.jpeg?t=123458",
       caption: "My favorite view 😍",
       rotation: -2
-    }
+    },
+     {
+      id: 4,
+      url: "/hello3.jpeg?t=123458",
+      caption: "My favorite view 😍",
+      rotation: -2
+    },
+     {
+      id: 5,
+      url: "/hello4.jpeg?t=123458",
+      caption: "My favorite view 😍",
+      rotation: -2
+    },
+     {
+      id: 6,
+      url: "/hello5.jpeg?t=123458",
+      caption: "My favorite view 😍",
+      rotation: -2
+    },
+     {
+      id: 7,
+      url: "/hellp6.jpeg?t=123458",
+      caption: "My favorite view 😍",
+      rotation: -2
+    },
+     {
+      id: 8,
+      url: "/hello7.jpeg?t=123458",
+      caption: "My favorite view 😍",
+      rotation: -2
+    },
+     {
+      id: 9,
+      url: "/hello8.jpeg?t=123458",
+      caption: "My favorite view 😍",
+      rotation: -2
+    },
+ 
   ],
   music: {
     title: "A Little Surprise 🎁",
