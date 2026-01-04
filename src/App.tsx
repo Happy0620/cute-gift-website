@@ -159,12 +159,13 @@ const PhotoGallery: React.FC = () => {
               onHoverStart={() => setHoveredId(photo.id)}
               onHoverEnd={() => setHoveredId(null)}
             >
-              <div className="aspect-square bg-gray-100 overflow-hidden rounded-lg mb-4 relative">
+              <div className="w-full bg-gray-100 overflow-hidden rounded-lg mb-4 relative" style={{ aspectRatio: '4/5' }}>
                 <img 
                   src={photo.url} 
                   alt={photo.caption} 
-                  className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                   loading="lazy"
+                  style={{ objectPosition: 'center' }}
                 />
                 
                 {hoveredId === photo.id && (
