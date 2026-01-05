@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Sparkles, Music, Share2 } from 'lucide-react';
+// import { Heart, Sparkles, Music, Share2 } from 'lucide-react';
 import { GIFT_DATA } from './components/gift/mockData';
+import { Heart, Sparkles, Music, Share2 } from 'lucide-react';
 
 // Hero Component
 const Hero: React.FC = () => {

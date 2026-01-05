@@ -9,59 +9,58 @@ export const GIFT_DATA = {
   photos: [
     {
       id: 1,
-      url: "/hello.jpeg?t=123456",
+      url: "./hello.jpeg",
       caption: "where time softened 🍀",
       rotation: -3
     },
     {
       id: 2,
-      url: "/hello1.jpeg?t=123457",
+      url: "./hello1.jpeg",
       caption: "held briefly 👀",
       rotation: 2
     },
     {
       id: 3,
-      url: "/hello2.jpeg?t=123458",
+      url: "./hello2.jpeg",
       caption: "a gentle pause 💚",
       rotation: -2
     },
-     {
+    {
       id: 4,
-      url: "/hello3.jpeg?t=123458",
+      url: "./hello3.jpeg",
       caption: "Us being silly 🤪",
-      rotation: -2
+      rotation: 3
     },
-     {
+    {
       id: 5,
-      url: "/hello4.jpeg?t=123458",
+      url: "./hello4.jpeg",
       caption: "almost nothing, almost everything😭",
-      rotation: -2
+      rotation: -3
     },
-     {
+    {
       id: 6,
-      url: "/hello5.jpeg?t=123458",
+      url: "./hello5.jpeg",
       caption: "quiet but full 🥹",
-      rotation: -2
+      rotation: 2
     },
-     {
+    {
       id: 7,
-      url: "/hellp6.jpeg?t=123458",
+      url: "./hellp6.jpeg",
       caption: "My favorite view 😻",
       rotation: -2
     },
-     {
+    {
       id: 8,
-      url: "/hello7.jpeg?t=123458",
+      url: "./hello7.jpeg",
       caption: "Beautiful moments ✨",
-      rotation: -2
+      rotation: 3
     },
-     {
+    {
       id: 9,
-      url: "/hello8.jpeg?t=123458",
+      url: "./hello8.jpeg",
       caption: "as it was 🥰",
-      rotation: -2
+      rotation: -3
     },
- 
   ],
   music: {
     title: "A Little Surprise 🎁",
