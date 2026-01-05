@@ -326,7 +326,7 @@ function App() {
       <FinalMessage />
       
       <footer className="py-8 text-center text-pink-400 text-sm bg-gradient-to-t from-pink-50 to-white">
-        <p className="font-medium">Made with ❤️</p>
+        <p className="font-medium">Get Well Soon LOVE 💚</p>
       </footer>
     </div>
   );
